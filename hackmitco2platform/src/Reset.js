@@ -4,14 +4,17 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordResetEmail } from "./firebase";
 import "./Reset.css";
+
 function Reset() {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
+
   useEffect(() => {
     if (loading) return;
     if (user) history.replace("/dashboard");
   }, [user, loading]);
+
   return (
     <div className="reset">
       <div className="reset__container">
@@ -28,6 +31,7 @@ function Reset() {
         >
           Send password reset email
         </button>
+
         <div>
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
@@ -35,4 +39,5 @@ function Reset() {
     </div>
   );
 }
+
 export default Reset;
