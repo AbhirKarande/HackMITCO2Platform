@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import { getAuth, onAuthStateChanged } from "firebase";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEF46552qaMtMU_6nQfbaJ4eFc71oEif4",
@@ -14,6 +15,11 @@ const auth = app.auth();
 const db = app.firestore();
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+const whoAuth = () => {
+  return auth.currentUser;
+
+};
 
 const signInWithGoogle = async () => {
   try {
@@ -76,6 +82,7 @@ const logout = () => {
   auth.signOut();
 };
 
+
 export {
   auth,
   db,
@@ -84,4 +91,7 @@ export {
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logout,
+  firebase,
+  whoAuth,
+  
 };

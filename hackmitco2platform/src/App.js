@@ -1,4 +1,3 @@
-
 import './App.css';
 import Homepage from './components/home/Homepage'
 import MakeAChange from './components/MakeAChange/MakeAChange'
@@ -8,8 +7,16 @@ import Login from './Login'
 import Register from './Register'
 import Reset from './Reset'
 import Dashboard from './Dashboard'
+import Setup from './Setup'
+import React, { useState, useEffect } from 'react';
+
 
 function App() {
+
+  useEffect(() => {
+    
+  });
+
   return (
     <div><div className="app">
       <Router>
@@ -18,16 +25,12 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/reset" component={Reset} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/setup" component={Setup} />
         </Switch>
       </Router>
     </div>
     <div>
-      <Router>
-        <Nav></Nav>
-          <Switch></Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/makeAChange" component={MakeAChange} />
-      </Router>
+
     </div></div>
       )
 }
