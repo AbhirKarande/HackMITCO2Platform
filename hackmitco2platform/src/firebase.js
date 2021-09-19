@@ -76,6 +76,10 @@ const logout = () => {
   auth.signOut();
 };
 
+const profilesetup = () => {
+  
+}
+
 export {
   auth,
   db,
@@ -84,4 +88,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logout,
+  profilesetup
 };
