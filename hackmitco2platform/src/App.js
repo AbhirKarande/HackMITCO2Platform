@@ -1,9 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Homepage from './components/home/Homepage'
 import MakeAChange from './components/MakeAChange/MakeAChange'
 import Nav from './components/navigation/Nav'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from './Login'
+import Register from './Register'
+import Reset from './Reset'
+import Dashboard from './Dashboard'
 
 function App() {
   return (
