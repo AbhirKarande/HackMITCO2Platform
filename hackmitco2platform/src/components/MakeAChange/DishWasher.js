@@ -13,14 +13,14 @@ import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
 
 const useStyles = makeStyles({
-  root: {
-    width: 250,
-  },
-  input: {
-    width: 42,
-  },
-});
-export default function Water() {
+    root: {
+      width: 250,
+    },
+    input: {
+      width: 42,
+    },
+  });
+export default function DishWasher() {
     const classes = useStyles();
     const [value, setValue] = React.useState(5);
 
@@ -42,25 +42,24 @@ export default function Water() {
     return(
         <div>
                 <FormControl component="fieldset">
-                    <FormLabel component="legend">Do you take showers or baths?</FormLabel>
+                    <FormLabel component="legend">Do you have a dishwasher?</FormLabel>
                     <RadioGroup row aria-label="position" name="position" defaultValue="top">
                         <FormControlLabel
-                        value="Shower"
+                        value="Yes"
                         control={<Radio color="primary" />}
-                        label="Shower"
+                        label="Yes"
                         labelPlacement="bottom"
                         />
                         <FormControlLabel
-                        value="Bath"
+                        value="No"
                         control={<Radio color="primary" />}
-                        label="Bath"
+                        label="No"
                         labelPlacement="bottom"
                         />
                     </RadioGroup>
                 </FormControl>
-                <div className={classes.root}>
                 <Typography id="input-slider" gutterBottom>
-                    If selected that you take showers for the previous question, how long are your showers?
+                    If selected that you take have a dishwasher for the previous question, how many times do you use it?
                 </Typography>
                 <Grid container spacing={2} alignItems="center">
                     <Grid item>
@@ -80,21 +79,17 @@ export default function Water() {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         inputProps={{
-                        step: 10,
+                        step: 1,
                         min: 0,
-                        max: 100,
+                        max: 20,
                         type: 'number',
                         'aria-labelledby': 'input-slider',
                         }}
                     />
                     </Grid>
                 </Grid>
-                </div>
-
-
+                
         </div>
 
     )
-
 }
-
